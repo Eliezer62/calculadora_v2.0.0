@@ -67,36 +67,38 @@ class Gui():
     def botoes_funcao(self):
         #cria os botoes com as funções de cálculos
         FONT = "Arial 8 bold"
+        BG = "#181818"
+        FG = "#FFF"
         #linha 1
-        Button(self.framebt, text="/", width=10, borderwidth=0, height=2, font=FONT).grid(row=0, column=4)
-        Button(self.framebt, text="/", width=10, borderwidth=0, height=2, font=FONT).grid(row=0, column=5)
-        Button(self.framebt, text="/", width=10, borderwidth=0, height=2, font=FONT).grid(row=0, column=6)
-        Button(self.framebt, text="/", width=10, borderwidth=0, height=2, font=FONT).grid(row=0, column=7)
-        Button(self.framebt, text="/", width=10, borderwidth=0, height=2, font=FONT).grid(row=0, column=8)
+        Button(self.framebt, text="/", width=10, borderwidth=0, height=2, font=FONT, bg=BG, fg=FG).grid(row=0, column=4)
+        Button(self.framebt, text="/", width=10, borderwidth=0, height=2, font=FONT, bg=BG, fg=FG).grid(row=0, column=5)
+        Button(self.framebt, text="/", width=10, borderwidth=0, height=2, font=FONT, bg=BG, fg=FG).grid(row=0, column=6)
+        Button(self.framebt, text="/", width=10, borderwidth=0, height=2, font=FONT, bg=BG, fg=FG).grid(row=0, column=7)
+        Button(self.framebt, text="/", width=10, borderwidth=0, height=2, font=FONT, bg=BG, fg=FG).grid(row=0, column=8)
         #linha 2
-        Button(self.framebt, text="/", width=10, borderwidth=0, height=2, font=FONT).grid(row=1, column=4)
-        Button(self.framebt, text="/", width=10, borderwidth=0, height=2, font=FONT).grid(row=1, column=5)
-        Button(self.framebt, text="/", width=10, borderwidth=0, height=2, font=FONT).grid(row=1, column=6)
-        Button(self.framebt, text="/", width=10, borderwidth=0, height=2, font=FONT).grid(row=1, column=7)
-        Button(self.framebt, text="/", width=10, borderwidth=0, height=2, font=FONT).grid(row=1, column=8)
+        Button(self.framebt, text="/", width=10, borderwidth=0, height=2, font=FONT, bg=BG, fg=FG).grid(row=1, column=4)
+        Button(self.framebt, text="/", width=10, borderwidth=0, height=2, font=FONT, bg=BG, fg=FG).grid(row=1, column=5)
+        Button(self.framebt, text="/", width=10, borderwidth=0, height=2, font=FONT, bg=BG, fg=FG).grid(row=1, column=6)
+        Button(self.framebt, text="/", width=10, borderwidth=0, height=2, font=FONT, bg=BG, fg=FG).grid(row=1, column=7)
+        Button(self.framebt, text="/", width=10, borderwidth=0, height=2, font=FONT, bg=BG, fg=FG).grid(row=1, column=8)
         #linha 3
-        Button(self.framebt, text="/", width=10, borderwidth=0, height=2, font=FONT).grid(row=2, column=4)
-        Button(self.framebt, text="/", width=10, borderwidth=0, height=2, font=FONT).grid(row=2, column=5)
-        Button(self.framebt, text="/", width=10, borderwidth=0, height=2, font=FONT).grid(row=2, column=6)
-        Button(self.framebt, text="/", width=10, borderwidth=0, height=2, font=FONT).grid(row=2, column=7)
-        Button(self.framebt, text="/", width=10, borderwidth=0, height=2, font=FONT).grid(row=2, column=8)
+        Button(self.framebt, text="/", width=10, borderwidth=0, height=2, font=FONT, bg=BG, fg=FG).grid(row=2, column=4)
+        Button(self.framebt, text="/", width=10, borderwidth=0, height=2, font=FONT, bg=BG, fg=FG).grid(row=2, column=5)
+        Button(self.framebt, text="/", width=10, borderwidth=0, height=2, font=FONT, bg=BG, fg=FG).grid(row=2, column=6)
+        Button(self.framebt, text="/", width=10, borderwidth=0, height=2, font=FONT, bg=BG, fg=FG).grid(row=2, column=7)
+        Button(self.framebt, text="/", width=10, borderwidth=0, height=2, font=FONT, bg=BG, fg=FG).grid(row=2, column=8)
         #linha 4
-        Button(self.framebt, text="/", width=10, borderwidth=0, height=2, font=FONT).grid(row=3, column=4)
-        Button(self.framebt, text="/", width=10, borderwidth=0, height=2, font=FONT).grid(row=3, column=5)
-        Button(self.framebt, text="/", width=10, borderwidth=0, height=2, font=FONT).grid(row=3, column=6)
-        Button(self.framebt, text="/", width=10, borderwidth=0, height=2, font=FONT).grid(row=3, column=7)
-        Button(self.framebt, text="/", width=10, borderwidth=0, height=2, font=FONT).grid(row=3, column=8)
+        Button(self.framebt, text="/", width=10, borderwidth=0, height=2, font=FONT, bg=BG, fg=FG).grid(row=3, column=4)
+        Button(self.framebt, text="/", width=10, borderwidth=0, height=2, font=FONT, bg=BG, fg=FG).grid(row=3, column=5)
+        Button(self.framebt, text="/", width=10, borderwidth=0, height=2, font=FONT, bg=BG, fg=FG).grid(row=3, column=6)
+        Button(self.framebt, text="/", width=10, borderwidth=0, height=2, font=FONT, bg=BG, fg=FG).grid(row=3, column=7)
+        Button(self.framebt, text="/", width=10, borderwidth=0, height=2, font=FONT, bg=BG, fg=FG).grid(row=3, column=8)
         #linha 5
-        Button(self.framebt, text="/", width=10, borderwidth=0, height=2, font=FONT).grid(row=4, column=4)
-        Button(self.framebt, text="/", width=10, borderwidth=0, height=2, font=FONT).grid(row=4, column=5)
-        Button(self.framebt, text="/", width=10, borderwidth=0, height=2, font=FONT).grid(row=4, column=6)
-        Button(self.framebt, text="/", width=10, borderwidth=0, height=2, font=FONT).grid(row=4, column=7)
-        Button(self.framebt, text="/", width=10, borderwidth=0, height=2, font=FONT).grid(row=4, column=8)
+        Button(self.framebt, text="/", width=10, borderwidth=0, height=2, font=FONT, bg=BG, fg=FG).grid(row=4, column=4)
+        Button(self.framebt, text="/", width=10, borderwidth=0, height=2, font=FONT, bg=BG, fg=FG).grid(row=4, column=5)
+        Button(self.framebt, text="/", width=10, borderwidth=0, height=2, font=FONT, bg=BG, fg=FG).grid(row=4, column=6)
+        Button(self.framebt, text="/", width=10, borderwidth=0, height=2, font=FONT, bg=BG, fg=FG).grid(row=4, column=7)
+        Button(self.framebt, text="/", width=10, borderwidth=0, height=2, font=FONT, bg=BG, fg=FG).grid(row=4, column=8)
 
 
 #ambiente de teste
