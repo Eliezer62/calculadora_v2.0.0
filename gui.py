@@ -35,31 +35,33 @@ class Gui():
     def botoes_num(self):
         #cria o botoes dentro do FrameBt
         FONT="Arial 8 bold"
+        BG = "#181818"
+        FG = "#FFF"
         #linha 1
-        Button(self.framebt, text="%", width=10, borderwidth=0, height=2, font=FONT).grid(row=0, column=0)
-        Button(self.framebt, text="√", width=10, borderwidth=0, height=2, font=FONT).grid(row=0, column=1)
-        Button(self.framebt, text="AC", width=10, borderwidth=0, height=2, font=FONT).grid(row=0, column=2)
-        Button(self.framebt, text="DEL", width=10, borderwidth=0, height=2, font=FONT).grid(row=0, column=3)
+        Button(self.framebt, text="%", width=10, borderwidth=0, height=2, font=FONT, bg=BG, fg=FG).grid(row=0, column=0)
+        Button(self.framebt, text="√", width=10, borderwidth=0, height=2, font=FONT, bg=BG, fg=FG).grid(row=0, column=1)
+        Button(self.framebt, text="AC", width=10, borderwidth=0, height=2, font=FONT, bg=BG, fg=FG).grid(row=0, column=2)
+        Button(self.framebt, text="DEL", width=10, borderwidth=0, height=2, font=FONT, bg=BG, fg=FG).grid(row=0, column=3)
         #linha 2
-        Button(self.framebt, text="+", width=10, borderwidth=0, height=2, font=FONT).grid(row=1, column=0)
-        Button(self.framebt, text="7", width=10, borderwidth=0, height=2, font=FONT).grid(row=1, column=1)
-        Button(self.framebt, text="8", width=10, borderwidth=0, height=2, font=FONT).grid(row=1, column=2)
-        Button(self.framebt, text="9", width=10, borderwidth=0, height=2, font=FONT).grid(row=1, column=3)
+        Button(self.framebt, text="+", width=10, borderwidth=0, height=2, font=FONT, bg=BG, fg=FG).grid(row=1, column=0)
+        Button(self.framebt, text="7", width=10, borderwidth=0, height=2, font=FONT, bg=BG, fg=FG).grid(row=1, column=1)
+        Button(self.framebt, text="8", width=10, borderwidth=0, height=2, font=FONT, bg=BG, fg=FG).grid(row=1, column=2)
+        Button(self.framebt, text="9", width=10, borderwidth=0, height=2, font=FONT, bg=BG, fg=FG).grid(row=1, column=3)
         #linha 3
-        Button(self.framebt, text="-", width=10, borderwidth=0, height=2, font=FONT).grid(row=2, column=0)
-        Button(self.framebt, text="4", width=10, borderwidth=0, height=2, font=FONT).grid(row=2, column=1)
-        Button(self.framebt, text="5", width=10, borderwidth=0, height=2, font=FONT).grid(row=2, column=2)
-        Button(self.framebt, text="6", width=10, borderwidth=0, height=2, font=FONT).grid(row=2, column=3)
+        Button(self.framebt, text="-", width=10, borderwidth=0, height=2, font=FONT, bg=BG, fg=FG).grid(row=2, column=0)
+        Button(self.framebt, text="4", width=10, borderwidth=0, height=2, font=FONT, bg=BG, fg=FG).grid(row=2, column=1)
+        Button(self.framebt, text="5", width=10, borderwidth=0, height=2, font=FONT, bg=BG, fg=FG).grid(row=2, column=2)
+        Button(self.framebt, text="6", width=10, borderwidth=0, height=2, font=FONT, bg=BG, fg=FG).grid(row=2, column=3)
         #linha 4
-        Button(self.framebt, text="x", width=10, borderwidth=0, height=2, font=FONT).grid(row=3, column=0)
-        Button(self.framebt, text="1", width=10, borderwidth=0, height=2, font=FONT).grid(row=3, column=1)
-        Button(self.framebt, text="2", width=10, borderwidth=0, height=2, font=FONT).grid(row=3, column=2)
-        Button(self.framebt, text="3", width=10, borderwidth=0, height=2, font=FONT).grid(row=3, column=3)
+        Button(self.framebt, text="x", width=10, borderwidth=0, height=2, font=FONT, bg=BG, fg=FG).grid(row=3, column=0)
+        Button(self.framebt, text="1", width=10, borderwidth=0, height=2, font=FONT, bg=BG, fg=FG).grid(row=3, column=1)
+        Button(self.framebt, text="2", width=10, borderwidth=0, height=2, font=FONT, bg=BG, fg=FG).grid(row=3, column=2)
+        Button(self.framebt, text="3", width=10, borderwidth=0, height=2, font=FONT, bg=BG, fg=FG).grid(row=3, column=3)
         #linha 5
-        Button(self.framebt, text="/", width=10, borderwidth=0, height=2, font=FONT).grid(row=4, column=0)
-        Button(self.framebt, text=",", width=10, borderwidth=0, height=2, font=FONT).grid(row=4, column=1)
-        Button(self.framebt, text="0", width=10, borderwidth=0, height=2, font=FONT).grid(row=4, column=2)
-        Button(self.framebt, text="Ans", width=10, borderwidth=0, height=2, font=FONT).grid(row=4, column=3)
+        Button(self.framebt, text="/", width=10, borderwidth=0, height=2, font=FONT, bg=BG, fg=FG).grid(row=4, column=0)
+        Button(self.framebt, text=",", width=10, borderwidth=0, height=2, font=FONT, bg=BG, fg=FG).grid(row=4, column=1)
+        Button(self.framebt, text="0", width=10, borderwidth=0, height=2, font=FONT, bg=BG, fg=FG).grid(row=4, column=2)
+        Button(self.framebt, text="Ans", width=10, borderwidth=0, height=2, font=FONT, bg=BG, fg=FG).grid(row=4, column=3)
 
 
     def botoes_funcao(self):
