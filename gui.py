@@ -10,7 +10,7 @@ class Gui():
         #definindo o título da janela, seu tamanho, background
         self.root = Tk()
         self.root.title("Calculadora v2.0.0")
-        self.root.geometry("678x425+400+100")
+        self.root.geometry("678x300+400+100")
         self.root.resizable(0, 0)
         self.root.config(bg="#19171A")
         self.expressao = "teste"
@@ -30,6 +30,8 @@ class Gui():
         self.visor.pack()
         self.framebt = Frame(self.root, width=678, height=350)
         self.framebt.pack()
+        #etiqueta da calculadora
+        Label(self.root, text="@Buizzy - Eliezer de Almeida", bg="#19171A", fg="#FFF").pack(fill=X)
 
 
     def botoes_num(self):
