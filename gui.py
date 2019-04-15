@@ -27,7 +27,7 @@ class Gui():
 
 
     def visor_design(self):
-        self.visor = Label(self.root, text=self.expressao+" "*10, bg="#291C2A", fg="#fff", width=97, height=5, anchor=E, font="Arial 12 bold")
+        self.visor = Label(self.root, text=self.expressao+" "*10, bg="#291C2A", fg="#fff", width=97, height=5, anchor=E, font="Arial 12")
         self.visor.pack()
         self.framebt = Frame(self.root, width=678, height=350)
         self.framebt.pack()
@@ -41,29 +41,34 @@ class Gui():
         BG = "#181818"
         FG = "#FFF"
         #linha 1
-        Button(self.framebt, text="%", width=10, borderwidth=0, height=2, font=FONT, bg=BG, fg=FG).grid(row=0, column=0)
-        Button(self.framebt, text="√", width=10, borderwidth=0, height=2, font=FONT, bg=BG, fg=FG).grid(row=0, column=1)
+        Button(self.framebt, text="%", width=10, borderwidth=0, height=2, font=FONT, bg=BG, fg=FG, command=lambda:self.atribui_valor("%")).grid(row=0, column=0)
+        Button(self.framebt, text="√", width=10, borderwidth=0, height=2, font=FONT, bg=BG, fg=FG, command=lambda:self.atribui_valor("√")).grid(row=0, column=1)
         Button(self.framebt, text="AC", width=10, borderwidth=0, height=2, font=FONT, bg=BG, fg=FG).grid(row=0, column=2)
         Button(self.framebt, text="DEL", width=10, borderwidth=0, height=2, font=FONT, bg=BG, fg=FG).grid(row=0, column=3)
         #linha 2
-        Button(self.framebt, text="+", width=10, borderwidth=0, height=2, font=FONT, bg=BG, fg=FG).grid(row=1, column=0)
-        Button(self.framebt, text="7", width=10, borderwidth=0, height=2, font=FONT, bg=BG, fg=FG).grid(row=1, column=1)
-        Button(self.framebt, text="8", width=10, borderwidth=0, height=2, font=FONT, bg=BG, fg=FG).grid(row=1, column=2)
-        Button(self.framebt, text="9", width=10, borderwidth=0, height=2, font=FONT, bg=BG, fg=FG).grid(row=1, column=3)
+        Button(self.framebt, text="+", width=10, borderwidth=0, height=2, font=FONT, bg=BG, fg=FG, command=lambda:self.atribui_valor("+")).grid(row=1, column=0)
+        Button(self.framebt, text="7", width=10, borderwidth=0, height=2, font=FONT, bg=BG, fg=FG, command=lambda:self.atribui_valor("7")).grid(row=1, column=1)
+        Button(self.framebt, text="8", width=10, borderwidth=0, height=2, font=FONT, bg=BG, fg=FG, command=lambda:self.atribui_valor("8")).grid(row=1, column=2)
+        Button(self.framebt, text="9", width=10, borderwidth=0, height=2, font=FONT, bg=BG, fg=FG, command=lambda:self.atribui_valor("9")).grid(row=1, column=3)
         #linha 3
-        Button(self.framebt, text="-", width=10, borderwidth=0, height=2, font=FONT, bg=BG, fg=FG).grid(row=2, column=0)
-        Button(self.framebt, text="4", width=10, borderwidth=0, height=2, font=FONT, bg=BG, fg=FG).grid(row=2, column=1)
-        Button(self.framebt, text="5", width=10, borderwidth=0, height=2, font=FONT, bg=BG, fg=FG).grid(row=2, column=2)
-        Button(self.framebt, text="6", width=10, borderwidth=0, height=2, font=FONT, bg=BG, fg=FG).grid(row=2, column=3)
+        Button(self.framebt, text="-", width=10, borderwidth=0, height=2, font=FONT, bg=BG, fg=FG, command=lambda:self.atribui_valor("-")).grid(row=2, column=0)
+        Button(self.framebt, text="4", width=10, borderwidth=0, height=2, font=FONT, bg=BG, fg=FG, command=lambda:self.atribui_valor("4")).grid(row=2, column=1)
+        Button(self.framebt, text="5", width=10, borderwidth=0, height=2, font=FONT, bg=BG, fg=FG
+        , command=lambda:self.atribui_valor("5")).grid(row=2, column=2)
+        Button(self.framebt, text="6", width=10, borderwidth=0, height=2, font=FONT, bg=BG, fg=FG, command=lambda:self.atribui_valor("6")).grid(row=2, column=3)
         #linha 4
-        Button(self.framebt, text="x", width=10, borderwidth=0, height=2, font=FONT, bg=BG, fg=FG).grid(row=3, column=0)
-        Button(self.framebt, text="1", width=10, borderwidth=0, height=2, font=FONT, bg=BG, fg=FG).grid(row=3, column=1)
-        Button(self.framebt, text="2", width=10, borderwidth=0, height=2, font=FONT, bg=BG, fg=FG).grid(row=3, column=2)
-        Button(self.framebt, text="3", width=10, borderwidth=0, height=2, font=FONT, bg=BG, fg=FG).grid(row=3, column=3)
+        Button(self.framebt, text="*", width=10, borderwidth=0, height=2, font=FONT, bg=BG, fg=FG, command=lambda:self.atribui_valor("*")).grid(row=3, column=0)
+        Button(self.framebt, text="1", width=10, borderwidth=0, height=2, font=FONT, bg=BG, fg=FG
+        , command=lambda:self.atribui_valor("1")).grid(row=3, column=1)
+        Button(self.framebt, text="2", width=10, borderwidth=0, height=2, font=FONT, bg=BG, fg=FG, command=lambda:self.atribui_valor("2")).grid(row=3, column=2)
+        Button(self.framebt, text="3", width=10, borderwidth=0, height=2, font=FONT, bg=BG, fg=FG, command=lambda:self.atribui_valor("3")).grid(row=3, column=3)
         #linha 5
-        Button(self.framebt, text="/", width=10, borderwidth=0, height=2, font=FONT, bg=BG, fg=FG).grid(row=4, column=0)
-        Button(self.framebt, text=",", width=10, borderwidth=0, height=2, font=FONT, bg=BG, fg=FG).grid(row=4, column=1)
-        Button(self.framebt, text="0", width=10, borderwidth=0, height=2, font=FONT, bg=BG, fg=FG).grid(row=4, column=2)
+        Button(self.framebt, text="/", width=10, borderwidth=0, height=2, font=FONT, bg=BG, fg=FG
+        , command=lambda:self.atribui_valor("/")).grid(row=4, column=0)
+        Button(self.framebt, text=",", width=10, borderwidth=0, height=2, font=FONT, bg=BG, fg=FG
+        , command=lambda:self.atribui_valor(",")).grid(row=4, column=1)
+        Button(self.framebt, text="0", width=10, borderwidth=0, height=2, font=FONT, bg=BG, fg=FG
+        , command=lambda:self.atribui_valor("0")).grid(row=4, column=2)
         Button(self.framebt, text="Ans", width=10, borderwidth=0, height=2, font=FONT, bg=BG, fg=FG).grid(row=4, column=3)
 
 
@@ -104,6 +109,18 @@ class Gui():
         Button(self.framebt, text="empty", width=10, borderwidth=0, height=2, font=FONT, bg=BG, fg=FG).grid(row=4, column=8)
 
 
+
+    def atribui_valor(self, valor):
+        #esta funcao é executada e atribui valor a self.expressao
+        #também atualiza a label self.visor
+        if len(self.expressao) < 41:
+            self.expressao += str(valor)
+            self.visor.config(text=self.expressao+" "*10)
+        
+        else:
+            print("Limite atingido")
+
+    
 #ambiente de teste
 
 teste_classe = Gui()
