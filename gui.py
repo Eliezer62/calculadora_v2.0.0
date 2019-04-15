@@ -1,4 +1,5 @@
-from tkinter import *
+from tkinter import Tk, Label, Frame, E, Button, X, mainloop
+#from tkinter import 
 
 
 #GUI da calculadora
