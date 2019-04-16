@@ -43,8 +43,8 @@ class Gui():
         #linha 1
         Button(self.framebt, text="%", width=10, borderwidth=0, height=2, font=FONT, bg=BG, fg=FG, command=lambda:self.atribui_valor("%")).grid(row=0, column=0)
         Button(self.framebt, text="√", width=10, borderwidth=0, height=2, font=FONT, bg=BG, fg=FG, command=lambda:self.atribui_valor("√")).grid(row=0, column=1)
-        Button(self.framebt, text="AC", width=10, borderwidth=0, height=2, font=FONT, bg=BG, fg=FG).grid(row=0, column=2)
-        Button(self.framebt, text="DEL", width=10, borderwidth=0, height=2, font=FONT, bg=BG, fg=FG).grid(row=0, column=3)
+        Button(self.framebt, text="AC", width=10, borderwidth=0, height=2, font=FONT, bg=BG, fg=FG, command=lambda:self.apagar("ac")).grid(row=0, column=2)
+        Button(self.framebt, text="DEL", width=10, borderwidth=0, height=2, font=FONT, bg=BG, fg=FG, command=lambda:self.apagar("del")).grid(row=0, column=3)
         #linha 2
         Button(self.framebt, text="+", width=10, borderwidth=0, height=2, font=FONT, bg=BG, fg=FG, command=lambda:self.atribui_valor("+")).grid(row=1, column=0)
         Button(self.framebt, text="7", width=10, borderwidth=0, height=2, font=FONT, bg=BG, fg=FG, command=lambda:self.atribui_valor("7")).grid(row=1, column=1)
@@ -119,6 +119,21 @@ class Gui():
         
         else:
             print("Limite atingido")
+
+
+    def apagar(self, comando):
+        #essa função apaga o valor do visor
+        if comando == "ac":
+            self.expressao = ""
+
+        elif comando == "del":
+            if len(self.expressao) > 0:
+                lista = list(self.expressao)
+                lista.pop()
+                self.expressao = "".join(lista)
+
+        self.visor.config(text=self.expressao+" "*10)
+
 
     
 #ambiente de teste
