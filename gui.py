@@ -80,9 +80,9 @@ class Gui():
         #linha 1
         Button(self.framebt, text="e", width=10, borderwidth=0, height=2, font=FONT, bg=BG, fg=FG).grid(row=0, column=4)
         Button(self.framebt, text="π", width=10, borderwidth=0, height=2, font=FONT, bg=BG, fg=FG).grid(row=0, column=5)
-        Button(self.framebt, text="M", width=10, borderwidth=0, height=2, font=FONT, bg=BG, fg=FG).grid(row=0, column=6)
-        Button(self.framebt, text="M+", width=10, borderwidth=0, height=2, font=FONT, bg=BG, fg=FG).grid(row=0, column=7)
-        Button(self.framebt, text="M-", width=10, borderwidth=0, height=2, font=FONT, bg=BG, fg=FG).grid(row=0, column=8)
+        Button(self.framebt, text="M", width=10, borderwidth=0, height=2, font=FONT, bg=BG, fg=FG, command=lambda:self.memoria("m")).grid(row=0, column=6)
+        Button(self.framebt, text="M+", width=10, borderwidth=0, height=2, font=FONT, bg=BG, fg=FG, command=lambda:self.memoria("m+")).grid(row=0, column=7)
+        Button(self.framebt, text="M-", width=10, borderwidth=0, height=2, font=FONT, bg=BG, fg=FG, command=lambda:self.memoria("m-")).grid(row=0, column=8)
         #linha 2
         Button(self.framebt, text="sin", width=10, borderwidth=0, height=2, font=FONT, bg=BG, fg=FG).grid(row=1, column=4)
         Button(self.framebt, text="cos", width=10, borderwidth=0, height=2, font=FONT, bg=BG, fg=FG).grid(row=1, column=5)
@@ -109,7 +109,6 @@ class Gui():
         Button(self.framebt, text="empty", width=10, borderwidth=0, height=2, font=FONT, bg=BG, fg=FG).grid(row=4, column=8)
 
 
-
     def atribui_valor(self, valor):
         #esta funcao é executada e atribui valor a self.expressao
         #também atualiza a label self.visor
@@ -134,6 +133,24 @@ class Gui():
 
         self.visor.config(text=self.expressao+" "*10)
 
+
+
+    def memoria(self, bt):
+        #pega o valor do visor e salva em um bloco de notas
+        if bt == "m":
+            memory = open("memory.txt", "r")
+            self.expressao += memory.read()
+
+        elif bt == "m+":
+            memory = open("memory.txt", "w")
+            memory.writelines(self.expressao)
+            memory.close()
+
+        else:
+            memory = open("memory.txt", "w")
+            memory.close()
+        
+        self.visor.config(text=self.expressao+" "*10)
 
     
 #ambiente de teste
