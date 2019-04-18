@@ -16,6 +16,7 @@ class Gui():
         self.root.resizable(0, 0)
         self.root.config(bg="#19171A")
         self.expressao = ""
+        self.ans = ""
 
     
     def init(self):
@@ -70,7 +71,7 @@ class Gui():
         , command=lambda:self.atribui_valor(",")).grid(row=4, column=1)
         Button(self.framebt, text="0", width=10, borderwidth=0, height=2, font=FONT, bg=BG, fg=FG
         , command=lambda:self.atribui_valor("0")).grid(row=4, column=2)
-        Button(self.framebt, text="Ans", width=10, borderwidth=0, height=2, font=FONT, bg=BG, fg=FG).grid(row=4, column=3)
+        Button(self.framebt, text="Ans", width=10, borderwidth=0, height=2, font=FONT, bg=BG, fg=FG, command=lambda:self.visor.config(text=self.expressao+self.ans+" "*10)).grid(row=4, column=3)
 
 
     def botoes_funcao(self):
@@ -157,7 +158,7 @@ class Gui():
 
     def resolver(self):
         resulta = str(mh.resolve(self.expressao))
-        print(resulta)
+        self.ans = resulta
         self.visor.config(text=resulta+" "*10)
 
     
