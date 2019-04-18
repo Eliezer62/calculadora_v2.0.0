@@ -79,8 +79,8 @@ class Gui():
         BG = "#181818"
         FG = "#FFF"
         #linha 1
-        Button(self.framebt, text="e", width=10, borderwidth=0, height=2, font=FONT, bg=BG, fg=FG).grid(row=0, column=4)
-        Button(self.framebt, text="π", width=10, borderwidth=0, height=2, font=FONT, bg=BG, fg=FG).grid(row=0, column=5)
+        Button(self.framebt, text="e", width=10, borderwidth=0, height=2, font=FONT, bg=BG, fg=FG, command=lambda:self.atribui_valor("e")).grid(row=0, column=4)
+        Button(self.framebt, text="π", width=10, borderwidth=0, height=2, font=FONT, bg=BG, fg=FG, command=lambda:self.atribui_valor("π")).grid(row=0, column=5)
         Button(self.framebt, text="M", width=10, borderwidth=0, height=2, font=FONT, bg=BG, fg=FG, command=lambda:self.memoria("m")).grid(row=0, column=6)
         Button(self.framebt, text="M+", width=10, borderwidth=0, height=2, font=FONT, bg=BG, fg=FG, command=lambda:self.memoria("m+")).grid(row=0, column=7)
         Button(self.framebt, text="M-", width=10, borderwidth=0, height=2, font=FONT, bg=BG, fg=FG, command=lambda:self.memoria("m-")).grid(row=0, column=8)
