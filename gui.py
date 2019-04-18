@@ -1,5 +1,6 @@
 from tkinter import Tk, Label, Frame, E, Button, X, mainloop
 #from tkinter import 
+import mathforhuman as mh
 
 
 #GUI da calculadora
@@ -14,7 +15,7 @@ class Gui():
         self.root.geometry("678x300+400+100")
         self.root.resizable(0, 0)
         self.root.config(bg="#19171A")
-        self.expressao = "teste"
+        self.expressao = ""
 
     
     def init(self):
@@ -102,7 +103,7 @@ class Gui():
         Button(self.framebt, text="Deg", width=10, borderwidth=0, height=2, font=FONT, bg=BG, fg=FG).grid(row=3, column=7)
         Button(self.framebt, text="Rad", width=10, borderwidth=0, height=2, font=FONT, bg=BG, fg=FG).grid(row=3, column=8)
         #linha 5
-        Button(self.framebt, text="=", width=10, borderwidth=0, height=2, font=FONT, bg=BG, fg=FG).grid(row=4, column=4)
+        Button(self.framebt, text="=", width=10, borderwidth=0, height=2, font=FONT, bg=BG, fg=FG, command=lambda:self.resolver()).grid(row=4, column=4)
         Button(self.framebt, text="empty", width=10, borderwidth=0, height=2, font=FONT, bg=BG, fg=FG).grid(row=4, column=5)
         Button(self.framebt, text="empty", width=10, borderwidth=0, height=2, font=FONT, bg=BG, fg=FG).grid(row=4, column=6)
         Button(self.framebt, text="empty", width=10, borderwidth=0, height=2, font=FONT, bg=BG, fg=FG).grid(row=4, column=7)
@@ -151,6 +152,13 @@ class Gui():
             memory.close()
         
         self.visor.config(text=self.expressao+" "*10)
+
+
+
+    def resolver(self):
+        resulta = mh.resolve(self.expressao)
+        print(resulta)
+        self.visor.config(text=resulta+" "*10)
 
     
 #ambiente de teste

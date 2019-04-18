@@ -1,7 +1,7 @@
 def resolve(expressao):
     try:
         valor = str(eval(expressao))
-        print(valor)
+        return valor
 
     except Exception:
         print("erro")
