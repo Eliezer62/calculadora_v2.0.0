@@ -156,7 +156,7 @@ class Gui():
 
 
     def resolver(self):
-        resulta = mh.resolve(self.expressao)
+        resulta = str(mh.resolve(self.expressao))
         print(resulta)
         self.visor.config(text=resulta+" "*10)
 
