@@ -90,10 +90,10 @@ class Gui():
         Button(self.framebt, text="cos", width=10, borderwidth=0, height=2, font=FONT, bg=BG, fg=FG).grid(row=1, column=5)
         Button(self.framebt, text="tan", width=10, borderwidth=0, height=2, font=FONT, bg=BG, fg=FG).grid(row=1, column=6)
         Button(self.framebt, text="hyp", width=10, borderwidth=0, height=2, font=FONT, bg=BG, fg=FG).grid(row=1, column=7)
-        Button(self.framebt, text="n!", width=10, borderwidth=0, height=2, font=FONT, bg=BG, fg=FG).grid(row=1, column=8)
+        Button(self.framebt, text="n!", width=10, borderwidth=0, height=2, font=FONT, bg=BG, fg=FG,command=lambda:self.atribui_valor("!")).grid(row=1, column=8)
         #linha 3
-        Button(self.framebt, text="(", width=10, borderwidth=0, height=2, font=FONT, bg=BG, fg=FG).grid(row=2, column=4)
-        Button(self.framebt, text=")", width=10, borderwidth=0, height=2, font=FONT, bg=BG, fg=FG).grid(row=2, column=5)
+        Button(self.framebt, text="(", width=10, borderwidth=0, height=2, font=FONT, bg=BG, fg=FG, command=lambda:self.atribui_valor("(")).grid(row=2, column=4)
+        Button(self.framebt, text=")", width=10, borderwidth=0, height=2, font=FONT, bg=BG, fg=FG, command=lambda:self.atribui_valor(")")).grid(row=2, column=5)
         Button(self.framebt, text="log", width=10, borderwidth=0, height=2, font=FONT, bg=BG, fg=FG).grid(row=2, column=6)
         Button(self.framebt, text="^", width=10, borderwidth=0, height=2, font=FONT, bg=BG, fg=FG).grid(row=2, column=7)
         Button(self.framebt, text="|x|", width=10, borderwidth=0, height=2, font=FONT, bg=BG, fg=FG).grid(row=2, column=8)
