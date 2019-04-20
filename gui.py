@@ -1,4 +1,4 @@
-from tkinter import Tk, Label, Frame, E, Button, X, mainloop
+from tkinter import Tk, Label, Frame, E, Button, X, mainloop, W
 #from tkinter import 
 import mathforhuman as mh
 
@@ -12,12 +12,13 @@ class Gui():
         #definindo o título da janela, seu tamanho, background
         self.root = Tk()
         self.root.title("Calculadora v2.0.0")
-        self.root.geometry("678x300+400+100")
+        self.root.geometry("678x315+400+100")
         self.root.resizable(0, 0)
         self.root.config(bg="#19171A")
         self.expressao = ""
         self.ans = ""
         self.root.bind("<Key>", self.key_atribui)
+        self.mode_text = " "*5+"Deg"
 
     
     def init(self):
@@ -30,6 +31,8 @@ class Gui():
 
 
     def visor_design(self):
+        self.mode = Label(self.root, text=self.mode_text,  fg="#fff", bg="#291C2A", width=97, height=1, anchor=W, font="Arial 8")
+        self.mode.pack(fill=X)
         self.visor = Label(self.root, text=self.expressao+" "*10, bg="#291C2A", fg="#fff", width=97, height=5, anchor=E, font="Arial 12")
         self.visor.pack()
         self.framebt = Frame(self.root, width=678, height=350)
@@ -102,8 +105,8 @@ class Gui():
         Button(self.framebt, text="empty", width=10, borderwidth=0, height=2, font=FONT, bg=BG, fg=FG).grid(row=3, column=4)
         Button(self.framebt, text="empty", width=10, borderwidth=0, height=2, font=FONT, bg=BG, fg=FG).grid(row=3, column=5)
         Button(self.framebt, text="empty", width=10, borderwidth=0, height=2, font=FONT, bg=BG, fg=FG).grid(row=3, column=6)
-        Button(self.framebt, text="Deg", width=10, borderwidth=0, height=2, font=FONT, bg=BG, fg=FG).grid(row=3, column=7)
-        Button(self.framebt, text="Rad", width=10, borderwidth=0, height=2, font=FONT, bg=BG, fg=FG).grid(row=3, column=8)
+        Button(self.framebt, text="Deg", width=10, borderwidth=0, height=2, font=FONT, bg=BG, fg=FG, command=lambda:self.altera_mode("Deg")).grid(row=3, column=7)
+        Button(self.framebt, text="Rad", width=10, borderwidth=0, height=2, font=FONT, bg=BG, fg=FG, command=lambda:self.altera_mode("Rad")).grid(row=3, column=8)
         #linha 5
         Button(self.framebt, text="=", width=10, borderwidth=0, height=2, font=FONT, bg=BG, fg=FG, command=lambda:self.resolver()).grid(row=4, column=4)
         Button(self.framebt, text="empty", width=10, borderwidth=0, height=2, font=FONT, bg=BG, fg=FG).grid(row=4, column=5)
@@ -164,9 +167,19 @@ class Gui():
 
 
     def key_atribui(self, event):
+        #usando um bind ele pega o event  de uma key e verifica se é um número
         event = str(event).split()
         if event[4][6] in "1234567890":
             self.atribui_valor(event[4][6])
+
+
+
+    def altera_mode(self, event):
+        #altera mode que contém informações como se é grau ou radianos
+        if event == "Deg" or event == "Rad":
+            self.mode_text = self.mode_text.replace(self.mode_text[5:8:1], event)
+
+        self.mode.config(text=self.mode_text)
 
     
 #ambiente de teste
