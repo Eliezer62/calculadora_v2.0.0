@@ -17,6 +17,7 @@ class Gui():
         self.root.config(bg="#19171A")
         self.expressao = ""
         self.ans = ""
+        self.root.bind("<Key>", self.key_atribui)
 
     
     def init(self):
@@ -160,6 +161,12 @@ class Gui():
         resulta = str(mh.resolve(self.expressao))
         self.ans = resulta
         self.visor.config(text=resulta+" "*10)
+
+
+    def key_atribui(self, event):
+        event = str(event).split()
+        if event[4][6] in "1234567890":
+            self.atribui_valor(event[4][6])
 
     
 #ambiente de teste
