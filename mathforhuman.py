@@ -9,7 +9,9 @@ def constante(exp):
         exp = exp.replace("e", str(e))
 
     return exp
-def resolve(expressao):
+
+
+def resolve(expressao, mode):
     try:
         expressao = expressao
         expressao = constante(expressao)
