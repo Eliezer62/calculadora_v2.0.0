@@ -17,6 +17,7 @@ class Gui():
         self.root.config(bg="#19171A")
         self.expressao = ""
         self.ans = ""
+        self.root.bind("<Return>", self.resolver)
         self.root.bind("<Key>", self.key_atribui)
         self.mode_text = " "*5+"Deg"
 
@@ -160,7 +161,7 @@ class Gui():
 
 
 
-    def resolver(self):
+    def resolver(self, event=""):
         resulta = str(mh.resolve(self.expressao, self.mode_text))
         self.ans = resulta
         self.visor.config(text=resulta+" "*10)
