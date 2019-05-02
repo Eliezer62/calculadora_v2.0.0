@@ -1,4 +1,4 @@
-from math import *
+from math import pi, e, factorial
 def constante(exp):
     #esta funcao substitui as funcoes em numeros para utilizar no calculo
     exp = exp
