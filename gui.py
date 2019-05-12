@@ -15,6 +15,7 @@ class Gui():
         self.root.geometry("678x315+400+100")
         self.root.resizable(0, 0)
         self.root.config(bg="#19171A")
+        self.root.iconbitmap("files/favicon1.ico")
         self.expressao = ""
         self.ans = ""
         self.root.bind("<Return>", self.resolver)
@@ -145,7 +146,7 @@ class Gui():
     def memoria(self, bt):
         #pega o valor do visor e salva em um bloco de notas
         if bt == "m":
-            memory = open("memory.txt", "r")
+            memory = open(".\\files\\memory.txt", "r")
             self.expressao += memory.read()
 
         elif bt == "m+":
