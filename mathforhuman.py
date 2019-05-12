@@ -61,6 +61,28 @@ def raiz(exp):
         lista_exp.pop(local)
         #vai apagar a raiz      
         value = "" #define a variável temporária que vai sofrer modificações
+        #aqui detecta o fator de multiplicação
+        c = 1 #cria o contador
+        tmp = "" #cria a var tmp que vai conter o fator
+        while True: #cria um looping para pegaar todos os números
+            try:
+                if lista_exp[local-c].isnumeric() and local-c > -1:#verifica se o item da lista é um número e sua posição
+                    tmp += lista_exp[local-c] #atribui a tmp
+                    lista_exp[local-c] = ""#aqui vai substituir o valor, mas não vai mudar as casas
+
+                else:
+                    break #para quando não é um número ou está voltando
+
+            except Exception: #interrope caso haja um erro
+                break
+
+        #aqui verifica se tmp tem valor senão é atribuído 1 para multiplicar
+        if tmp != "":
+            tmp = float(tmp[::-1]) #inverte a var
+
+        else:
+            tmp = 1
+
         while True:
             #aqui vai pegar os números e armazená-los em value para serem calculados
             try:
@@ -79,7 +101,8 @@ def raiz(exp):
                 #caso exista um erro, ele para a executação
                 break
 
-        lista_exp.insert(pos,str(sqrt(float(value)))) #calcula e insere a fatorial do value
+        value = sqrt(float(value))
+        lista_exp.insert(pos,str(tmp*value)) #calcula e insere a fatorial do value
         exp = "".join(lista_exp) #atribui os resultados à expressão
 
     return exp #retorna a expressão já com os resultados calculados
@@ -97,3 +120,7 @@ def resolve(expressao, mode):
     except Exception:
         print("erro")
 
+
+
+def test():
+    assert raiz("√9") == "3.0"
