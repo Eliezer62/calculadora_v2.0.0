@@ -164,7 +164,8 @@ class Gui():
     def resolver(self, event=""):
         resulta = str(mh.resolve(self.expressao, self.mode_text))
         self.ans = resulta
-        self.visor.config(text=resulta+" "*10)
+        self.expressao = resulta
+        self.visor.config(text=self.expressao+" "*10)
 
 
     def key_atribui(self, event):
@@ -172,7 +173,6 @@ class Gui():
         event = str(event).split()
         if event[4][6] in "1234567890":
             self.atribui_valor(event[4][6])
-
 
 
     def altera_mode(self, event):
