@@ -1,4 +1,5 @@
 from math import pi, e, factorial, sqrt
+import math as mt
 def constante(exp):
     #esta funcao substitui as funcoes em numeros para utilizar no calculo
     exp = exp
@@ -108,7 +109,26 @@ def raiz(exp):
     return exp #retorna a expressão já com os resultados calculados
 
 
+#EXPRESSÕES TRIGONOMÉTRICAS
+
+def sin(val):
+    mode = globals()["mode"] #busca mode que foi definida em resolve()
+    #verifica se está em graus, caso contrário, apenas calcula o seno
+    if mode[5:8] == "Deg": 
+        tmp = mt.sin(mt.radians(float(val))) #calcula o sin
+        tmp = "{:.10f}".format(tmp) #arredonda o valor para melhor compreensão
+
+    else:
+        tmp = sin(val)
+        tmp = f"{tmp:.10f}"
+
+    return float(tmp) #retorna tmp em float para retirar o zeros das casas decimais.
+
+
 def resolve(expressao, mode):
+    #define mode como uma variável global para ser usada nas expressões trignométricas
+    globals()["mode"] = mode
+    mode = mode
     try:
         expressao = expressao
         expressao = constante(expressao)
@@ -120,7 +140,3 @@ def resolve(expressao, mode):
     except Exception:
         print("erro")
 
-
-
-def test():
-    assert raiz("√9") == "3.0"
