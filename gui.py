@@ -73,8 +73,8 @@ class Gui():
         #linha 5
         Button(self.framebt, text="/", width=10, borderwidth=0, height=2, font=FONT, bg=BG, fg=FG
         , command=lambda:self.atribui_valor("/")).grid(row=4, column=0)
-        Button(self.framebt, text=",", width=10, borderwidth=0, height=2, font=FONT, bg=BG, fg=FG
-        , command=lambda:self.atribui_valor(",")).grid(row=4, column=1)
+        Button(self.framebt, text=".", width=10, borderwidth=0, height=2, font=FONT, bg=BG, fg=FG
+        , command=lambda:self.atribui_valor(".")).grid(row=4, column=1)
         Button(self.framebt, text="0", width=10, borderwidth=0, height=2, font=FONT, bg=BG, fg=FG
         , command=lambda:self.atribui_valor("0")).grid(row=4, column=2)
         Button(self.framebt, text="Ans", width=10, borderwidth=0, height=2, font=FONT, bg=BG, fg=FG, command=lambda:self.visor.config(text=self.expressao+self.ans+" "*10)).grid(row=4, column=3)
