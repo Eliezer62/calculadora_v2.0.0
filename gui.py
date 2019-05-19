@@ -49,7 +49,7 @@ class Gui():
         BG = "#181818"
         FG = "#FFF"
         #linha 1
-        Button(self.framebt, text="%", width=10, borderwidth=0, height=2, font=FONT, bg=BG, fg=FG, command=lambda:self.atribui_valor("%")).grid(row=0, column=0)
+        Button(self.framebt, text="%", width=10, borderwidth=0, height=2, font=FONT, bg=BG, fg=FG, command=lambda:self.atribui_valor("")).grid(row=0, column=0)
         Button(self.framebt, text="√", width=10, borderwidth=0, height=2, font=FONT, bg=BG, fg=FG, command=lambda:self.atribui_valor("√")).grid(row=0, column=1)
         Button(self.framebt, text="AC", width=10, borderwidth=0, height=2, font=FONT, bg=BG, fg=FG, command=lambda:self.apagar("ac")).grid(row=0, column=2)
         Button(self.framebt, text="DEL", width=10, borderwidth=0, height=2, font=FONT, bg=BG, fg=FG, command=lambda:self.apagar("del")).grid(row=0, column=3)
