@@ -139,6 +139,20 @@ def cos(val):
     return float(tmp) #retorna tmp em float para retirar o zeros das casas decimais.
 
 
+def tan(val):
+    mode = globals()["mode"] #busca mode que foi definida em resolve()
+    #verifica se está em graus, caso contrário, apenas calcula o cosseno
+    if mode[5:8] == "Deg": 
+        tmp = mt.tan(mt.radians(float(val))) #calcula o cos
+        tmp = "{:.10f}".format(tmp) #arredonda o valor para melhor compreensão
+
+    else:
+        tmp = tan(val)
+        tmp = f"{tmp:.10f}"
+
+    return float(tmp) #retorna tmp em float para retirar o zeros das casas decimais.
+
+
 def resolve(expressao, mode):
     #define mode como uma variável global para ser usada nas expressões trignométricas
     globals()["mode"] = mode
