@@ -119,7 +119,7 @@ def sin(val):
         tmp = "{:.10f}".format(tmp) #arredonda o valor para melhor compreensão
 
     else:
-        tmp = sin(val)
+        tmp = mt.sin(val)
         tmp = f"{tmp:.10f}"
 
     return float(tmp) #retorna tmp em float para retirar o zeros das casas decimais.
@@ -133,7 +133,7 @@ def cos(val):
         tmp = "{:.10f}".format(tmp) #arredonda o valor para melhor compreensão
 
     else:
-        tmp = cos(val)
+        tmp = mt.cos(val)
         tmp = f"{tmp:.10f}"
 
     return float(tmp) #retorna tmp em float para retirar o zeros das casas decimais.
@@ -147,7 +147,7 @@ def tan(val):
         tmp = "{:.10f}".format(tmp) #arredonda o valor para melhor compreensão
 
     else:
-        tmp = tan(val)
+        tmp = mt.tan(val)
         tmp = f"{tmp:.10f}"
 
     return float(tmp) #retorna tmp em float para retirar o zeros das casas decimais.
