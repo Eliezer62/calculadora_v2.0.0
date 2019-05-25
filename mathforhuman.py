@@ -1,4 +1,4 @@
-from math import pi, e, factorial, sqrt
+from math import pi, e, factorial, sqrt, pow
 import math as mt
 def constante(exp):
     #esta funcao substitui as funcoes em numeros para utilizar no calculo
@@ -152,6 +152,48 @@ def tan(val):
 
     return float(tmp) #retorna tmp em float para retirar o zeros das casas decimais.
 
+#FIM EXPRESSÕES TRIGONOMÉTRICAS
+
+def potencia(exp):
+    exp = str(exp)
+    while "^" in exp: #verifica a existencia de potencias
+        local = exp.find("^") #localiza a primeira ocorrência de potencia
+        lista_exp = list(exp)
+        lista_exp.pop(local) #apaga a ^
+        lista_exp.pop(local) #apaga o parênteses
+        expoente = ""
+        base = ""
+        while True: #pega o expoente
+            if lista_exp[local] != ")":
+                expoente += lista_exp[local]
+                lista_exp.pop(local)
+
+            else:
+                lista_exp.pop(local)
+                break
+
+        c = 1 #define o contador
+        while True: #pega a base
+            try:
+                if lista_exp[local-c].isnumeric() and local-c > -1:
+                    base += lista_exp[local-c]
+                    lista_exp.pop(local-c)
+                    pos = local-c #marca a posicao do ultimo
+                    c += 1
+
+                else:
+                    break
+
+            except Exception:
+                break
+
+        base = base[::-1] #inversao da base
+        x = str(pow(float(base), float(expoente)))
+        lista_exp.insert(pos, x)
+        exp = "".join(lista_exp)
+        
+    return exp
+
 
 def resolve(expressao, mode):
     #define mode como uma variável global para ser usada nas expressões trignométricas
@@ -162,6 +204,7 @@ def resolve(expressao, mode):
         expressao = constante(expressao)
         expressao = fatorial(expressao)
         expressao = raiz(expressao)
+        expressao = potencia(expressao)
         valor = str(eval(expressao))
         return valor
 
