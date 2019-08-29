@@ -134,7 +134,19 @@ class Gui():
             self.expressao = ""
 
         elif comando == "del":
-            if len(self.expressao) > 0:
+            #aqui serve para apagar as funcoes
+            a = self.expressao[-1:-5:-1]#pega os ultimos valores a fim de verificar se é uma funcao
+            a = a[::-1]#desinverte os valores
+            #verifica a existencia dos valores na string, para evitar que delete valores que nao sao funcoes
+            #a partir daqui executa o algoritmo para deletar a funcao
+            if a in "sin(cos(tan(" and len(self.expressao) > 0:
+                b = list(self.expressao)
+                for c in range(1, 5):
+                    b.pop(-1)
+
+                self.expressao = "".join(b)
+
+            elif len(self.expressao) > 0:
                 lista = list(self.expressao)
                 lista.pop()
                 self.expressao = "".join(lista)
