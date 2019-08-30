@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link rel="stylesheet" href="estilo.css"/>
+        <link rel="shortcut icon" href="../files/favicon1.ico" />
+        <meta charset="UTF-8"/>
+        <script>
+            var show = 1;
+            function trocar(){
+                
+                if (show == 1){
+                    esconder();
+                    show = 0;
+                }
+                else{
+                    mostrar();
+                    show = 1;
+                }
+            }
+            function esconder(){
+                document.getElementById("indice").style.display = "none";
+            }
+            function mostrar(){
+                document.getElementById("indice").style.display = "block";
+            }
+        </script>
+    </head>
+    <body>
+        <!-- Menu modificavel -->
+        <iframe src="menu.html" class="menu"></iframe>
+        <!--Background #a87fab e #c8aeca-->
+        <h1 style="margin-left: 10px; padding: 15px;">índice [<input type="submit" name="esconder" value="esconder"onclick="trocar()">]</h1>
+        <div id="indice">
+            <ol style="padding: 15px;">
+                <li><a href="#">Apresentação</a></li>
+                <li><a href="#"></a></li>
+                <li><a href="#"></a></li>
+            </ol>
+        </div>
+        <!-- conteúdo-->
+        <h1 class="titulos">Calculadora v2.0.0 - Apresentação</h1>
+        <p>Primeiramente obrigado por utilizar a Calculadora v2.0.0. Ela foi desenvolvida por Eliezer de Almeida a fim de ser mais simples e fácil de ser utilizada, facilitando a vida do usuário e sem deixar de lado uma grande variedade de funções. Seu código é livre para ser copiado, recortado e qualquer outra coisa. Aproveite!</p>
+        <h1 class="titulos">Conhecendo</h1>
+        [imagem do layout das calculadoras]
+
+
+    </body>
+</html>

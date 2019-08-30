@@ -1,0 +1,21 @@
+@charset "utf-8";
+* {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, Helvetica, sans-serif; 
+    /*fonte temporária */
+}
+.menu{
+    border: none;
+    width: 100%;
+}
+body{
+    background-image: linear-gradient(to bottom right, #a87fab, #c8aeca);
+    background-repeat: no-repeat;
+}
+#indice{
+    border: 1px solid #371B38;
+    width: 300px;
+    margin-left: 10px;
+    padding: 15px;
+}
