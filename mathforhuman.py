@@ -208,6 +208,9 @@ def resolve(expressao, mode):
         valor = str(eval(expressao))
         return valor
 
-    except Exception:
-        print("erro")
+    except ArithmeticError:
+        return "Erro matemático"
+
+    except  Exception:
+        return "Erro de síntaxe"
 

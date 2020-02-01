@@ -1,6 +1,7 @@
 from tkinter import Tk, Label, Frame, E, Button, X, mainloop, W
 #from tkinter import 
 import mathforhuman as mh
+from sys import platform
 
 
 #GUI da calculadora
@@ -12,10 +13,11 @@ class Gui():
         #definindo o título da janela, seu tamanho, background
         self.root = Tk()
         self.root.title("Calculadora v2.0.0")
-        self.root.geometry("678x315+400+100")
+        #self.root.geometry("678x315+400+100") para windows
+        self.root.geometry("770x320" if platform == "linux" else "678x315+400+100")
         self.root.resizable(0, 0)
         self.root.config(bg="#19171A")
-        self.root.iconbitmap("files/favicon1.ico")
+        #self.root.iconbitmap("./files/favicon1.ico")
         self.expressao = ""
         self.ans = ""
         self.root.bind("<Return>", self.resolver)
@@ -183,9 +185,12 @@ class Gui():
 
     def key_atribui(self, event):
         #usando um bind ele pega o event  de uma key e verifica se é um número
-        event = str(event).split()
-        if event[4][6] in "1234567890":
-            self.atribui_valor(event[4][6])
+        key = event.char
+        if key in "1234567890":
+            self.atribui_valor(key)
+
+        elif event.keycode == 22:
+            self.apagar("del")
 
 
     def altera_mode(self, event):

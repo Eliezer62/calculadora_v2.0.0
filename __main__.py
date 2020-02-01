@@ -1,4 +1,6 @@
 from tkinter import *
+from gui import Gui
+from sys import platform
 
 
 # Calculadora V2.0.0 Criado por Eliezer de Almeida @Buizzy
@@ -7,6 +9,6 @@ from tkinter import *
 #__version__ = "2.0.0"
 #background #e0d2e1
 
-
 if __name__=="__main__":
-    pass
+    app = Gui()
+    app.init()
